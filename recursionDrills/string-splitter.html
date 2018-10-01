@@ -1,0 +1,17 @@
+<script> 
+  
+let string = 'The quick brown fox jumped over the lazy dog.';
+
+function stringSplitter(string, separator) {
+  
+  if(string.indexOf(separator) === -1) {  
+    return [string.slice(0)];
+  }
+
+  let separatorIndex = string.indexOf(separator);
+  return [string.slice(0, separatorIndex), ...stringSplitter(string.slice(separatorIndex + 1), separator)];
+}
+
+console.log(stringSplitter(string, ' '));
+
+</script>
